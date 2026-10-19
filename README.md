@@ -6,7 +6,17 @@ Index of benchmarks authored by Daniel Rosehill — systematic, repeatable perfo
 
 **Last Updated:** 2026-10-19
 
-**Inclusion rule:** a public repository that scores several models, tools or hardware configurations against the same test material and publishes the numbers. One-off probes and qualitative experiments belong in the sibling [Experiments And Evaluations Index](https://github.com/danielrosehill/Experiments-And-Evaluations-Index). Private repositories are never listed here.
+**Inclusion rule:** a public repository that scores several models, tools or hardware configurations against the same test material. One-off probes and qualitative experiments belong in the sibling [Experiments And Evaluations Index](https://github.com/danielrosehill/Experiments-And-Evaluations-Index). Private repositories are never listed here.
+
+**Lifecycle.** Each entry is in one of three stages, and its section shows which:
+
+| Stage | Meaning | Section |
+|---|---|---|
+| **Results published** | Has been run, and the repo publishes the numbers | The topic sections (Speech, Image Generation, …) |
+| **Built, not yet run** | The repo, test prompts and harness exist and can be run now. Running it is a separate step | [Built, Not Yet Run](#built-not-yet-run) |
+| **Planned** | A design document only. No repo or no test material yet | [Planned](#planned) |
+
+A built eval is a finished piece of work, not a plan. When it publishes results, move it into a topic section. When a plan gets its own repo with prompts and a harness, move it to Built, Not Yet Run and delete the plan file.
 
 ---
 
@@ -97,11 +107,13 @@ Benchmarks of the desktop workstation (i7-12700F, RX 7700 XT, 64 GB DDR5, Ubuntu
 
 ---
 
-## Planned
+## Built, Not Yet Run
+
+Evals whose framework is complete (repo, test prompts, harness) but that have not had a full run yet.
 
 ### Dan-Eval
 
-A composite of model-behaviour checks run before adopting a new model. Each component has its own repository. Placeholder as of 2026-10-19.
+A composite of model-behaviour checks run before adopting a new model. Each component has its own repository. The harness works, and a 24-prompt proof-of-concept run (`poc-01`) exists, but there is no full run yet (2026-10-19).
 
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?logo=github)](https://github.com/danielrosehill/Dan-Eval)
 
@@ -111,12 +123,14 @@ A composite of model-behaviour checks run before adopting a new model. Each comp
 
 ### Propaganda-Bait-Eval
 
-Gives models loaded political premises across six series (CCP, MAGA, pro-Israel, pro-Palestine, Kremlin, US-left) and scores how readily they repeat each framing, as a Propaganda Regurgitation Index with per-series selectivity. This complements direct censorship questions. 72 prompts; harness proven on a smoke run on 2026-10-19, no full run yet.
+Gives models loaded political premises across six series (CCP, MAGA, pro-Israel, pro-Palestine, Kremlin, US-left) and scores how readily they repeat each framing, as a Propaganda Regurgitation Index with per-series selectivity. This complements direct censorship questions. 72 prompts and a working harness, checked on a smoke run on 2026-10-19. A ready-to-run Chinese-labs panel config is included.
 
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?logo=github)](https://github.com/danielrosehill/Propaganda-Bait-Eval)
 [![Hugging Face](https://img.shields.io/badge/HuggingFace-Dataset-yellow?logo=huggingface)](https://huggingface.co/datasets/danielrosehill/Propaganda-Bait-Eval)
 
-### Other plans
+---
+
+## Planned
 
 Design documents for benchmarks that are not in a repository yet. They are in [`benchmark-plans/`](benchmark-plans/):
 
