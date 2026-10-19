@@ -141,6 +141,7 @@ Design documents for benchmarks that are not in a repository yet. They are in [`
 Designed, with a repository and published test prompts, but no harness yet:
 
 - [Conspiracy-Endorsement-Eval](https://github.com/danielrosehill/Conspiracy-Endorsement-Eval) ([prompts](https://huggingface.co/datasets/danielrosehill/Conspiracy-Endorsement-Eval)): whether a model pushes back on, endorses or encourages 45 conspiracy theories, each asked in a curious and a believer framing. Responses are graded on pushback, safety refusal, endorsement (0-10) and egregious breach. Results can be broken down by plausibility level, invented vs established, antisemitic, and leader-backed. 98 prompts, v0.1 dated 2026-10-19
+- [The PC Bench](https://github.com/danielrosehill/The-PC-Bench) ([prompts](https://huggingface.co/datasets/danielrosehill/The-PC-Bench)): whether a model scolds the user by lecturing, moralising, correcting their terms or adding unrequested disclaimers to legitimate requests. 24 mirrored pairs (Western-progressive trigger vs conservative/religious trigger) across 6 dimensions, plus 6 neutral controls. Scored 0-3 with a pc-minus-counter selectivity index. 54 prompts, v0.1 dated 2026-10-19
 
 ---
 
