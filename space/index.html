@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Benchmarks · Daniel Rosehill</title>
+<meta name="description" content="Index of Daniel Rosehill's AI benchmarks and evals: model behaviour and safety, speech recognition, image generation and local inference. Repos, test prompts and datasets in one table.">
+<style>
+  :root {
+    --bg: #fafaf9; --fg: #1c1917; --muted: #57534e; --line: #e7e5e4; --card: #ffffff;
+    --accent: #b45309; --chip: #f5f5f4;
+    --s-results: #15803d; --s-built: #1d4ed8; --s-prompts: #a16207; --s-planned: #78716c;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0c0a09; --fg: #f5f5f4; --muted: #a8a29e; --line: #292524; --card: #1c1917;
+      --accent: #f59e0b; --chip: #292524;
+      --s-results: #4ade80; --s-built: #93c5fd; --s-prompts: #facc15; --s-planned: #a8a29e;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 1100px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 28px; margin: 0 0 4px; }
+  .lede { color: var(--muted); margin: 0 0 20px; max-width: 70ch; }
+  a { color: var(--accent); }
+  .controls { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; align-items: center; }
+  .chip { border: 1px solid var(--line); background: var(--chip); color: var(--fg); padding: 5px 12px; border-radius: 999px; cursor: pointer; font: inherit; font-size: 13px; }
+  .chip[aria-pressed="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+  input[type=search] { flex: 1 1 200px; min-width: 0; padding: 7px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); color: var(--fg); font: inherit; }
+  .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; background: var(--card); }
+  table { border-collapse: collapse; width: 100%; min-width: 760px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
+  tr:last-child td { border-bottom: 0; }
+  td .name { font-weight: 600; }
+  td .sum { color: var(--muted); font-size: 13px; margin-top: 2px; }
+  .stage { font-size: 12px; font-weight: 600; white-space: nowrap; }
+  .stage::before { content: "●"; margin-right: 5px; }
+  .st-results { color: var(--s-results); } .st-built { color: var(--s-built); }
+  .st-prompts { color: var(--s-prompts); } .st-planned { color: var(--s-planned); }
+  .links a { display: inline-block; margin-right: 8px; white-space: nowrap; }
+  .num { text-align: right; font-variant-numeric: tabular-nums; }
+  .legend { color: var(--muted); font-size: 13px; margin-top: 14px; }
+  footer { color: var(--muted); font-size: 13px; margin-top: 24px; }
+  .err { padding: 16px; color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <h1>My Benchmarks</h1>
+  <p class="lede">Every benchmark and eval I've built or proposed: model behaviour and AI safety, speech recognition, image generation and local inference. Each row links the code repo and the test prompts or dataset. Read live from <a href="https://github.com/danielrosehill/My-Benchmarks/blob/master/benchmarks.json" target="_blank" rel="noopener">benchmarks.json</a>.</p>
+
+  <div class="controls" role="group" aria-label="Filter">
+    <div id="cats"></div>
+    <input type="search" id="q" placeholder="Search benchmarks…" aria-label="Search">
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Benchmark</th><th>Area</th><th>Stage</th><th>Links</th><th class="num">Prompts</th></tr></thead>
+      <tbody id="rows"><tr><td colspan="5" class="err">Loading…</td></tr></tbody>
+    </table>
+  </div>
+  <p class="legend" id="legend"></p>
+
+  <footer>
+    By <a href="https://danielrosehill.com/ai/benchmarks" target="_blank" rel="noopener">Daniel Rosehill</a> ·
+    <a href="https://github.com/danielrosehill/My-Benchmarks" target="_blank" rel="noopener">GitHub index</a> ·
+    Last updated <span id="updated">—</span> · CC BY 4.0
+  </footer>
+</main>
+<script>
+const SRC = "https://raw.githubusercontent.com/danielrosehill/My-Benchmarks/master/benchmarks.json";
+const STAGE_ORDER = ["results", "built", "prompts", "planned"];
+const CAT_ORDER = ["behaviour", "speech", "image", "hardware"];
+let reg, cat = "all";
+
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const a = (url, label) => url ? `<a href="${esc(url)}" target="_blank" rel="noopener">${esc(label)}</a>` : "";
+
+function render() {
+  const q = document.getElementById("q").value.trim().toLowerCase();
+  const rows = reg.benchmarks
+    .filter((b) => cat === "all" || b.category === cat)
+    .filter((b) => !q || (b.name + " " + b.summary).toLowerCase().includes(q))
+    .sort((x, y) => CAT_ORDER.indexOf(x.category) - CAT_ORDER.indexOf(y.category)
+      || STAGE_ORDER.indexOf(x.stage) - STAGE_ORDER.indexOf(y.stage) || x.name.localeCompare(y.name));
+  document.getElementById("rows").innerHTML = rows.length ? rows.map((b) => `
+    <tr>
+      <td><div class="name">${esc(b.name)}</div><div class="sum">${esc(b.summary)}</div></td>
+      <td>${esc(reg.categories[b.category])}</td>
+      <td><span class="stage st-${esc(b.stage)}">${esc(reg.stages[b.stage].label)}</span></td>
+      <td class="links">${[a(b.repo, "Repo"), a(b.dataset, b.category === "behaviour" ? "Prompts" : "Dataset"), a(b.space, "Space"), a(b.plan, "Plan")].filter(Boolean).join("")}</td>
+      <td class="num">${b.prompts ?? ""}</td>
+    </tr>`).join("") : `<tr><td colspan="5" class="err">No matches.</td></tr>`;
+}
+
+function chips() {
+  const opts = [["all", "All"], ...CAT_ORDER.map((c) => [c, reg.categories[c]])];
+  const box = document.getElementById("cats");
+  box.innerHTML = opts.map(([v, l]) => `<button class="chip" data-v="${v}" aria-pressed="${v === cat}">${esc(l)}</button>`).join(" ");
+  box.querySelectorAll("button").forEach((btn) => btn.onclick = () => { cat = btn.dataset.v; chips(); render(); });
+}
+
+fetch(SRC).then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); }).then((data) => {
+  reg = data;
+  document.getElementById("updated").textContent = reg.updated;
+  document.getElementById("legend").innerHTML = Object.values(reg.stages).map((s) => `<b>${esc(s.label)}</b>: ${esc(s.meaning)}`).join(" · ");
+  chips(); render();
+  document.getElementById("q").addEventListener("input", render);
+}).catch((e) => {
+  document.getElementById("rows").innerHTML = `<tr><td colspan="5" class="err">Could not load the registry (${esc(e.message)}). See the <a href="https://github.com/danielrosehill/My-Benchmarks">GitHub index</a>.</td></tr>`;
+});
+</script>
+</body>
+</html>

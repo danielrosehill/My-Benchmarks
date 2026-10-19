@@ -20,6 +20,42 @@ A built eval is a finished piece of work, not a plan. When it publishes results,
 
 ---
 
+## At a Glance
+
+<!-- table:start -->
+21 entries, generated from [`benchmarks.json`](benchmarks.json) (updated 2026-10-19). Also browsable as a [Hugging Face Space](https://huggingface.co/spaces/danielrosehill/My-Benchmarks).
+
+Stages: **Results**: Run, with published results; **Built**: Repo, test material and harness exist; not yet fully run; **Prompts only**: Repo and published test prompts; no harness yet; **Planned**: Design document only.
+
+| Benchmark | Area | Stage | Repo | Test data / prompts | Prompts |
+|---|---|---|---|---|---|
+| **Dan-Eval** | Model behaviour & AI safety | Built | [GitHub](https://github.com/danielrosehill/Dan-Eval) |  |  |
+| **Propaganda Bait Eval** | Model behaviour & AI safety | Built | [GitHub](https://github.com/danielrosehill/Propaganda-Bait-Eval) | [Propaganda-Bait-Eval](https://huggingface.co/datasets/danielrosehill/Propaganda-Bait-Eval) | 72 |
+| **American Centrism Eval** | Model behaviour & AI safety | Prompts only | [GitHub](https://github.com/danielrosehill/American-Centrism-Eval) | [American-Centrism-Eval](https://huggingface.co/datasets/danielrosehill/American-Centrism-Eval) | 48 |
+| **Conspiracy Endorsement Eval** | Model behaviour & AI safety | Prompts only | [GitHub](https://github.com/danielrosehill/Conspiracy-Endorsement-Eval) | [Conspiracy-Endorsement-Eval](https://huggingface.co/datasets/danielrosehill/Conspiracy-Endorsement-Eval) | 98 |
+| **Israel–Palestine Framing Eval** | Model behaviour & AI safety | Prompts only | [GitHub](https://github.com/danielrosehill/Israel-Palestine-Framing-Eval) | [Israel-Palestine-Framing-Eval](https://huggingface.co/datasets/danielrosehill/Israel-Palestine-Framing-Eval) | 70 |
+| **The PC Bench** | Model behaviour & AI safety | Prompts only | [GitHub](https://github.com/danielrosehill/The-PC-Bench) | [The-PC-Bench](https://huggingface.co/datasets/danielrosehill/The-PC-Bench) | 54 |
+| **Last-24-Hours News Recall** | Model behaviour & AI safety | Planned | [Plan](https://github.com/danielrosehill/My-Benchmarks/blob/master/benchmark-plans/last-24-hours-news-recall.md) |  |  |
+| **Last-Hour News Recall** | Model behaviour & AI safety | Planned | [Plan](https://github.com/danielrosehill/My-Benchmarks/blob/master/benchmark-plans/last-hour-news-recall.md) |  |  |
+| **State Censorship in Asian Models** | Model behaviour & AI safety | Planned | [Plan](https://github.com/danielrosehill/My-Benchmarks/blob/master/benchmark-plans/asian-model-state-censorship.md) |  |  |
+| **US Democrat vs Republican Alignment** | Model behaviour & AI safety | Planned | [Plan](https://github.com/danielrosehill/My-Benchmarks/blob/master/benchmark-plans/us-democrat-vs-republican-alignment.md) |  |  |
+| **Audio Understanding Bitrate Eval** | Speech recognition & audio | Results | [GitHub](https://github.com/danielrosehill/Audio-Understanding-Bitrate-Eval-0426) | [Audio-Understanding-Bitrate-Eval-0426](https://huggingface.co/datasets/danielrosehill/Audio-Understanding-Bitrate-Eval-0426) |  |
+| **English–Hebrew Code-Switching ASR Benchmark** | Speech recognition & audio | Results | [GitHub](https://github.com/Hebrish-ASR/English-Hebrew-Codeswitching-ASR-Benchmark) | [English-Hebrew-Codeswitching-ASR-Benchmark](https://huggingface.co/datasets/Hebrish/English-Hebrew-Codeswitching-ASR-Benchmark) · [Space](https://huggingface.co/spaces/danielrosehill/English-Hebrew-Codeswitching-ASR-Leaderboard) |  |
+| **Local ASR STT Benchmark** | Speech recognition & audio | Results | [GitHub](https://github.com/danielrosehill/Local-ASR-STT-Benchmark) |  |  |
+| **Long-Form Audio Eval** | Speech recognition & audio | Results | [GitHub](https://github.com/danielrosehill/Long-Form-Audio-Eval) |  |  |
+| **One-Shot Transcription Microphone Eval** | Speech recognition & audio | Results | [GitHub](https://github.com/danielrosehill/One-Shot-Transcription-Microphone-Eval) |  |  |
+| **Transcription Cleanup Eval** | Speech recognition & audio | Results | [GitHub](https://github.com/danielrosehill/Transcription-Cleanup-Eval-1225) |  |  |
+| **Whisper Fine-Tune Accuracy Eval** | Speech recognition & audio | Results | [GitHub](https://github.com/danielrosehill/Whisper-Fine-Tune-Accuracy-Eval) |  |  |
+| **Whisper WPM & Background Noise Eval** | Speech recognition & audio | Results | [GitHub](https://github.com/danielrosehill/Whisper-WPM-Background-Noise-Eval) | [ASR-WPM-And-Background-Noise-Eval](https://huggingface.co/datasets/danielrosehill/ASR-WPM-And-Background-Noise-Eval) |  |
+| **Hebrew Image Generation Eval** | Image generation | Results | [GitHub](https://github.com/danielrosehill/Hebrew-Image-Generation-Eval) | [Hebrew-Image-Eval-111225](https://huggingface.co/datasets/danielrosehill/Hebrew-Image-Eval-111225) |  |
+| **Gemma 4 Benchmarks** | Local inference & hardware | Results | [GitHub](https://github.com/danielrosehill/Gemma-4-Benchmarks-0426) |  |  |
+| **Workstation Benchmarks** | Local inference & hardware | Results | [GitHub](https://github.com/danielrosehill/Workstation-Benchmarks-0226) |  |  |
+<!-- table:end -->
+
+**Maintaining this index.** [`benchmarks.json`](benchmarks.json) is the source of truth. It feeds the table above, the [Hugging Face Space](https://huggingface.co/spaces/danielrosehill/My-Benchmarks) (which reads the file live from this repo) and [danielrosehill.com/ai/benchmarks](https://danielrosehill.com/ai/benchmarks) (which reads it at build time). To add or move an entry, edit the JSON, run `python3 scripts/build_table.py`, then update the matching prose section below.
+
+---
+
 ## Flagship
 
 ### English-Hebrew Code-Switching ASR Benchmark

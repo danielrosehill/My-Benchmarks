@@ -1,0 +1,228 @@
+{
+  "about": "Registry of Daniel Rosehill's public benchmarks and evals. Source of truth for the README table (scripts/build_table.py), the Hugging Face Space danielrosehill/My-Benchmarks and danielrosehill.com/ai/benchmarks. Edit this file, then run the script. Private repos are never listed.",
+  "updated": "2026-10-19",
+  "stages": {
+    "results": {
+      "label": "Results",
+      "meaning": "Run, with published results"
+    },
+    "built": {
+      "label": "Built",
+      "meaning": "Repo, test material and harness exist; not yet fully run"
+    },
+    "prompts": {
+      "label": "Prompts only",
+      "meaning": "Repo and published test prompts; no harness yet"
+    },
+    "planned": {
+      "label": "Planned",
+      "meaning": "Design document only"
+    }
+  },
+  "categories": {
+    "behaviour": "Model behaviour & AI safety",
+    "speech": "Speech recognition & audio",
+    "image": "Image generation",
+    "hardware": "Local inference & hardware"
+  },
+  "benchmarks": [
+    {
+      "id": "english-hebrew-codeswitching-asr",
+      "name": "English–Hebrew Code-Switching ASR Benchmark",
+      "category": "speech",
+      "stage": "results",
+      "flagship": true,
+      "summary": "Speech-to-text on English speech that contains Hebrew words: a frozen test set, runner, scorer and public leaderboard, comparing stock models with code-switching fine-tunes.",
+      "repo": "https://github.com/Hebrish-ASR/English-Hebrew-Codeswitching-ASR-Benchmark",
+      "dataset": "https://huggingface.co/datasets/Hebrish/English-Hebrew-Codeswitching-ASR-Benchmark",
+      "space": "https://huggingface.co/spaces/danielrosehill/English-Hebrew-Codeswitching-ASR-Leaderboard",
+      "date": "2026-10"
+    },
+    {
+      "id": "the-pc-bench",
+      "name": "The PC Bench",
+      "category": "behaviour",
+      "stage": "prompts",
+      "flagship": true,
+      "summary": "Does the model scold you? Measures lecturing, moralising, terminology correction and unrequested disclaimers on legitimate requests. 24 mirrored pairs (Western-progressive vs conservative/religious triggers) plus neutral controls.",
+      "repo": "https://github.com/danielrosehill/The-PC-Bench",
+      "dataset": "https://huggingface.co/datasets/danielrosehill/The-PC-Bench",
+      "prompts": 54,
+      "date": "2026-10-19"
+    },
+    {
+      "id": "propaganda-bait-eval",
+      "name": "Propaganda Bait Eval",
+      "category": "behaviour",
+      "stage": "built",
+      "flagship": true,
+      "summary": "Feeds models loaded political premises across six series (CCP, MAGA, pro-Israel, pro-Palestine, Kremlin, US-progressive) and scores how readily each framing is repeated, with per-series selectivity.",
+      "repo": "https://github.com/danielrosehill/Propaganda-Bait-Eval",
+      "dataset": "https://huggingface.co/datasets/danielrosehill/Propaganda-Bait-Eval",
+      "prompts": 72,
+      "date": "2026-10-19"
+    },
+    {
+      "id": "conspiracy-endorsement-eval",
+      "name": "Conspiracy Endorsement Eval",
+      "category": "behaviour",
+      "stage": "prompts",
+      "summary": "Whether a model pushes back on, endorses or encourages 45 conspiracy theories, each asked in a curious and a believer framing.",
+      "repo": "https://github.com/danielrosehill/Conspiracy-Endorsement-Eval",
+      "dataset": "https://huggingface.co/datasets/danielrosehill/Conspiracy-Endorsement-Eval",
+      "prompts": 98,
+      "date": "2026-10-19"
+    },
+    {
+      "id": "israel-palestine-framing-eval",
+      "name": "Israel–Palestine Framing Eval",
+      "category": "behaviour",
+      "stage": "prompts",
+      "summary": "Whether a model treats mirrored pro-Israel and pro-Palestinian framings of the same events differently: loaded premises, framing pairs and open-neutral questions.",
+      "repo": "https://github.com/danielrosehill/Israel-Palestine-Framing-Eval",
+      "dataset": "https://huggingface.co/datasets/danielrosehill/Israel-Palestine-Framing-Eval",
+      "prompts": 70,
+      "date": "2026-10-19"
+    },
+    {
+      "id": "american-centrism-eval",
+      "name": "American Centrism Eval",
+      "category": "behaviour",
+      "stage": "prompts",
+      "summary": "Whether a model assumes the user is in the US when nothing says so: geography, units, spelling, law and culture defaults, with controls.",
+      "repo": "https://github.com/danielrosehill/American-Centrism-Eval",
+      "dataset": "https://huggingface.co/datasets/danielrosehill/American-Centrism-Eval",
+      "prompts": 48,
+      "date": "2026-10-19"
+    },
+    {
+      "id": "dan-eval",
+      "name": "Dan-Eval",
+      "category": "behaviour",
+      "stage": "built",
+      "summary": "A composite of the model-behaviour checks I run before adopting a model for an app, giving one scorecard per model. Each component lives in its own repo.",
+      "repo": "https://github.com/danielrosehill/Dan-Eval",
+      "date": "2026-10-19"
+    },
+    {
+      "id": "audio-understanding-bitrate-eval",
+      "name": "Audio Understanding Bitrate Eval",
+      "category": "speech",
+      "stage": "results",
+      "summary": "How MP3 bitrate affects transcription accuracy across every audio-input LLM on OpenRouter.",
+      "repo": "https://github.com/danielrosehill/Audio-Understanding-Bitrate-Eval-0426",
+      "dataset": "https://huggingface.co/datasets/danielrosehill/Audio-Understanding-Bitrate-Eval-0426",
+      "date": "2026-04"
+    },
+    {
+      "id": "whisper-fine-tune-accuracy-eval",
+      "name": "Whisper Fine-Tune Accuracy Eval",
+      "category": "speech",
+      "stage": "results",
+      "summary": "WER of personal Whisper fine-tunes vs stock Whisper at each model size. Fine-tuning helped the small models, hurt the large ones, and improved code-switching at every size.",
+      "repo": "https://github.com/danielrosehill/Whisper-Fine-Tune-Accuracy-Eval"
+    },
+    {
+      "id": "whisper-wpm-background-noise-eval",
+      "name": "Whisper WPM & Background Noise Eval",
+      "category": "speech",
+      "stage": "results",
+      "summary": "How speaking pace and background noise affect ASR word error rate.",
+      "repo": "https://github.com/danielrosehill/Whisper-WPM-Background-Noise-Eval",
+      "dataset": "https://huggingface.co/datasets/danielrosehill/ASR-WPM-And-Background-Noise-Eval"
+    },
+    {
+      "id": "long-form-audio-eval",
+      "name": "Long-Form Audio Eval",
+      "category": "speech",
+      "stage": "results",
+      "summary": "STT models on a 27-minute podcast against a professional reference transcript: WER, CER and punctuation accuracy.",
+      "repo": "https://github.com/danielrosehill/Long-Form-Audio-Eval"
+    },
+    {
+      "id": "one-shot-transcription-microphone-eval",
+      "name": "One-Shot Transcription Microphone Eval",
+      "category": "speech",
+      "stage": "results",
+      "summary": "STT accuracy across a range of microphones recording the same material.",
+      "repo": "https://github.com/danielrosehill/One-Shot-Transcription-Microphone-Eval"
+    },
+    {
+      "id": "transcription-cleanup-eval",
+      "name": "Transcription Cleanup Eval",
+      "category": "speech",
+      "stage": "results",
+      "summary": "Cloud audio-multimodal models transcribing and cleaning up a recording in one step. Subjective grading.",
+      "repo": "https://github.com/danielrosehill/Transcription-Cleanup-Eval-1225",
+      "date": "2025-12"
+    },
+    {
+      "id": "local-asr-stt-benchmark",
+      "name": "Local ASR STT Benchmark",
+      "category": "speech",
+      "stage": "results",
+      "summary": "Whisper model sizes in Speech Note on Ubuntu with AMD/ROCm. A rough first-pass comparison.",
+      "repo": "https://github.com/danielrosehill/Local-ASR-STT-Benchmark"
+    },
+    {
+      "id": "hebrew-image-generation-eval",
+      "name": "Hebrew Image Generation Eval",
+      "category": "image",
+      "stage": "results",
+      "summary": "Twelve text-to-image models scored pass/fail on rendering Hebrew text correctly.",
+      "repo": "https://github.com/danielrosehill/Hebrew-Image-Generation-Eval",
+      "dataset": "https://huggingface.co/datasets/danielrosehill/Hebrew-Image-Eval-111225",
+      "date": "2025-12"
+    },
+    {
+      "id": "gemma-4-benchmarks",
+      "name": "Gemma 4 Benchmarks",
+      "category": "hardware",
+      "stage": "results",
+      "summary": "Gemma 4 E4B vs Qwen3-VL 8B via Ollama on a CPU-only i7-12700F with 64 GB RAM.",
+      "repo": "https://github.com/danielrosehill/Gemma-4-Benchmarks-0426",
+      "date": "2026-04"
+    },
+    {
+      "id": "workstation-benchmarks",
+      "name": "Workstation Benchmarks",
+      "category": "hardware",
+      "stage": "results",
+      "summary": "Desktop workstation benchmarks (i7-12700F, RX 7700 XT, 64 GB DDR5, Ubuntu 25.10) with the full system inventory.",
+      "repo": "https://github.com/danielrosehill/Workstation-Benchmarks-0226",
+      "date": "2026-02"
+    },
+    {
+      "id": "asian-model-state-censorship",
+      "name": "State Censorship in Asian Models",
+      "category": "behaviour",
+      "stage": "planned",
+      "summary": "State-aligned censorship and framing in Chinese and other Asian models.",
+      "plan": "https://github.com/danielrosehill/My-Benchmarks/blob/master/benchmark-plans/asian-model-state-censorship.md"
+    },
+    {
+      "id": "us-democrat-vs-republican-alignment",
+      "name": "US Democrat vs Republican Alignment",
+      "category": "behaviour",
+      "stage": "planned",
+      "summary": "Partisan alignment, and whether a model refuses to argue one side more often than the other.",
+      "plan": "https://github.com/danielrosehill/My-Benchmarks/blob/master/benchmark-plans/us-democrat-vs-republican-alignment.md"
+    },
+    {
+      "id": "last-hour-news-recall",
+      "name": "Last-Hour News Recall",
+      "category": "behaviour",
+      "stage": "planned",
+      "summary": "Recall of the past hour's news by models that claim real-time retrieval.",
+      "plan": "https://github.com/danielrosehill/My-Benchmarks/blob/master/benchmark-plans/last-hour-news-recall.md"
+    },
+    {
+      "id": "last-24-hours-news-recall",
+      "name": "Last-24-Hours News Recall",
+      "category": "behaviour",
+      "stage": "planned",
+      "summary": "Recall of the past day's news by models that claim real-time retrieval.",
+      "plan": "https://github.com/danielrosehill/My-Benchmarks/blob/master/benchmark-plans/last-24-hours-news-recall.md"
+    }
+  ]
+}
