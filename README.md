@@ -15,7 +15,7 @@ Index of benchmarks authored by Daniel Rosehill — systematic, repeatable perfo
 | **Results** | Has been run, and the repo publishes the numbers | The topic sections (Speech, Image Generation, …) |
 | **Built** | The repo, test prompts and harness exist and can be run now. Running it is a separate step | [Built, Not Yet Run](#built-not-yet-run) |
 | **Prompts only** | Public repo with design and published test prompts; no harness yet | [Prompts Only](#prompts-only) |
-| **Planned** | A design document in `benchmark-plans/` only. No repo or test material | [Planned](#planned) |
+| **Planned** | Design only: a plan file in `benchmark-plans/`, or a public repo with no test prompts yet | [Planned](#planned) |
 
 Built and Prompts only are finished work, not plans. They are public seeds, for my own runs and for anyone who wants to run them. When a plan gets a repo with published prompts, delete the plan file and move the entry to Prompts only. When it gets a harness, move it to Built. When it publishes results, move it into a topic section.
 
@@ -26,7 +26,7 @@ Built and Prompts only are finished work, not plans. They are public seeds, for 
 <!-- table:start -->
 21 entries, generated from [`benchmarks.json`](benchmarks.json) (updated 2026-10-19). Also browsable as a [Hugging Face Space](https://huggingface.co/spaces/danielrosehill/My-Benchmarks).
 
-Stages: **Results**: Run, with published results; **Built**: Repo, test material and harness exist; not yet fully run; **Prompts only**: Repo and published test prompts; no harness yet; **Planned**: Design document only.
+Stages: **Results**: Run, with published results; **Built**: Repo, test material and harness exist; not yet fully run; **Prompts only**: Repo and published test prompts; no harness yet; **Planned**: Design only: a plan file, or a public repo with no test prompts yet.
 
 | Benchmark | Area | Stage | Repo | Test data / prompts | Prompts |
 |---|---|---|---|---|---|

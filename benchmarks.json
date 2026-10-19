@@ -16,7 +16,7 @@
     },
     "planned": {
       "label": "Planned",
-      "meaning": "Design document only"
+      "meaning": "Design only: a plan file, or a public repo with no test prompts yet"
     }
   },
   "categories": {
