@@ -8,15 +8,16 @@ Index of benchmarks authored by Daniel Rosehill — systematic, repeatable perfo
 
 **Inclusion rule:** a public repository that scores several models, tools or hardware configurations against the same test material. One-off probes and qualitative experiments belong in the sibling [Experiments And Evaluations Index](https://github.com/danielrosehill/Experiments-And-Evaluations-Index). Private repositories are never listed here.
 
-**Lifecycle.** Each entry is in one of three stages, and its section shows which:
+**Lifecycle.** Each entry is in one of four stages. The stage is the `stage` field in `benchmarks.json`, and the entry's section below matches it:
 
 | Stage | Meaning | Section |
 |---|---|---|
-| **Results published** | Has been run, and the repo publishes the numbers | The topic sections (Speech, Image Generation, …) |
-| **Built, not yet run** | The repo, test prompts and harness exist and can be run now. Running it is a separate step | [Built, Not Yet Run](#built-not-yet-run) |
-| **Planned** | A design document only. No repo or no test material yet | [Planned](#planned) |
+| **Results** | Has been run, and the repo publishes the numbers | The topic sections (Speech, Image Generation, …) |
+| **Built** | The repo, test prompts and harness exist and can be run now. Running it is a separate step | [Built, Not Yet Run](#built-not-yet-run) |
+| **Prompts only** | Public repo with design and published test prompts; no harness yet | [Prompts Only](#prompts-only) |
+| **Planned** | A design document in `benchmark-plans/` only. No repo or test material | [Planned](#planned) |
 
-A built eval is a finished piece of work, not a plan. When it publishes results, move it into a topic section. When a plan gets its own repo with prompts and a harness, move it to Built, Not Yet Run and delete the plan file.
+Built and Prompts only are finished work, not plans. They are public seeds, for my own runs and for anyone who wants to run them. When a plan gets a repo with published prompts, delete the plan file and move the entry to Prompts only. When it gets a harness, move it to Built. When it publishes results, move it into a topic section.
 
 ---
 
@@ -35,10 +36,10 @@ Stages: **Results**: Run, with published results; **Built**: Repo, test material
 | **Conspiracy Endorsement Eval** | Model behaviour & AI safety | Prompts only | [GitHub](https://github.com/danielrosehill/Conspiracy-Endorsement-Eval) | [Conspiracy-Endorsement-Eval](https://huggingface.co/datasets/danielrosehill/Conspiracy-Endorsement-Eval) | 98 |
 | **Israel–Palestine Framing Eval** | Model behaviour & AI safety | Prompts only | [GitHub](https://github.com/danielrosehill/Israel-Palestine-Framing-Eval) | [Israel-Palestine-Framing-Eval](https://huggingface.co/datasets/danielrosehill/Israel-Palestine-Framing-Eval) | 70 |
 | **The PC Bench** | Model behaviour & AI safety | Prompts only | [GitHub](https://github.com/danielrosehill/The-PC-Bench) | [The-PC-Bench](https://huggingface.co/datasets/danielrosehill/The-PC-Bench) | 54 |
+| **US Partisan Framing Eval** | Model behaviour & AI safety | Prompts only | [GitHub](https://github.com/danielrosehill/US-Partisan-Framing-Eval) | [US-Partisan-Framing-Eval](https://huggingface.co/datasets/danielrosehill/US-Partisan-Framing-Eval) | 54 |
 | **Last-24-Hours News Recall** | Model behaviour & AI safety | Planned | [Plan](https://github.com/danielrosehill/My-Benchmarks/blob/master/benchmark-plans/last-24-hours-news-recall.md) |  |  |
 | **Last-Hour News Recall** | Model behaviour & AI safety | Planned | [Plan](https://github.com/danielrosehill/My-Benchmarks/blob/master/benchmark-plans/last-hour-news-recall.md) |  |  |
 | **State Censorship in Asian Models** | Model behaviour & AI safety | Planned | [Plan](https://github.com/danielrosehill/My-Benchmarks/blob/master/benchmark-plans/asian-model-state-censorship.md) |  |  |
-| **US Democrat vs Republican Alignment** | Model behaviour & AI safety | Planned | [Plan](https://github.com/danielrosehill/My-Benchmarks/blob/master/benchmark-plans/us-democrat-vs-republican-alignment.md) |  |  |
 | **Audio Understanding Bitrate Eval** | Speech recognition & audio | Results | [GitHub](https://github.com/danielrosehill/Audio-Understanding-Bitrate-Eval-0426) | [Audio-Understanding-Bitrate-Eval-0426](https://huggingface.co/datasets/danielrosehill/Audio-Understanding-Bitrate-Eval-0426) |  |
 | **English–Hebrew Code-Switching ASR Benchmark** | Speech recognition & audio | Results | [GitHub](https://github.com/Hebrish-ASR/English-Hebrew-Codeswitching-ASR-Benchmark) | [English-Hebrew-Codeswitching-ASR-Benchmark](https://huggingface.co/datasets/Hebrish/English-Hebrew-Codeswitching-ASR-Benchmark) · [Space](https://huggingface.co/spaces/danielrosehill/English-Hebrew-Codeswitching-ASR-Leaderboard) |  |
 | **Local ASR STT Benchmark** | Speech recognition & audio | Results | [GitHub](https://github.com/danielrosehill/Local-ASR-STT-Benchmark) |  |  |
@@ -145,7 +146,7 @@ Benchmarks of the desktop workstation (i7-12700F, RX 7700 XT, 64 GB DDR5, Ubuntu
 
 ## Built, Not Yet Run
 
-Evals whose framework is complete (repo, test prompts, harness) but that have not had a full run yet.
+Evals whose framework is complete (repo, test prompts, harness) but that have not had a full run yet. Dan-Eval's components are listed with it; their own stage is noted on each.
 
 ### Dan-Eval
 
@@ -166,18 +167,22 @@ Gives models loaded political premises across six series (CCP, MAGA, pro-Israel,
 
 ---
 
+## Prompts Only
+
+Public repos with the design and published test prompts, but no harness yet. The Dan-Eval components above are also at this stage.
+
+- [Conspiracy-Endorsement-Eval](https://github.com/danielrosehill/Conspiracy-Endorsement-Eval) ([prompts](https://huggingface.co/datasets/danielrosehill/Conspiracy-Endorsement-Eval)): whether a model pushes back on, endorses or encourages 45 conspiracy theories, each asked in a curious and a believer framing. Responses are graded on pushback, safety refusal, endorsement (0-10) and egregious breach. Results can be broken down by plausibility level, invented vs established, antisemitic, and leader-backed. 98 prompts, v0.1 dated 2026-10-19
+- [The PC Bench](https://github.com/danielrosehill/The-PC-Bench) ([prompts](https://huggingface.co/datasets/danielrosehill/The-PC-Bench)): whether a model scolds the user by lecturing, moralising, correcting their terms or adding unrequested disclaimers to legitimate requests. 24 mirrored pairs (Western-progressive trigger vs conservative/religious trigger) across 6 dimensions, plus 6 neutral controls. Scored 0-3 with a pc-minus-counter selectivity index. 54 prompts, v0.1 dated 2026-10-19
+- [US-Partisan-Framing-Eval](https://github.com/danielrosehill/US-Partisan-Framing-Eval) ([prompts](https://huggingface.co/datasets/danielrosehill/US-Partisan-Framing-Eval)): asked an innocent question about a divisive US issue, whether a model answers with the popular Democratic or Republican framing, and on foreign policy, hawkish or dovish. Graded blind against anchors for each pole, as a signed lean index. 42 probes across 14 topics plus 12 factual controls, 54 prompts, v0.1 dated 2026-10-19. Graduated from the plan `benchmark-plans/us-democrat-vs-republican-alignment.md` (deleted)
+
+---
+
 ## Planned
 
 Design documents for benchmarks that are not in a repository yet. They are in [`benchmark-plans/`](benchmark-plans/):
 
 - [State Censorship in Asian Models](benchmark-plans/asian-model-state-censorship.md): state-aligned censorship and framing in Chinese and other Asian models
-- [US Democrat vs Republican Alignment](benchmark-plans/us-democrat-vs-republican-alignment.md): partisan alignment
 - [Last-Hour News Recall](benchmark-plans/last-hour-news-recall.md) and [Last-24-Hours News Recall](benchmark-plans/last-24-hours-news-recall.md): recall of recent news by models that claim real-time retrieval
-
-Designed, with a repository and published test prompts, but no harness yet:
-
-- [Conspiracy-Endorsement-Eval](https://github.com/danielrosehill/Conspiracy-Endorsement-Eval) ([prompts](https://huggingface.co/datasets/danielrosehill/Conspiracy-Endorsement-Eval)): whether a model pushes back on, endorses or encourages 45 conspiracy theories, each asked in a curious and a believer framing. Responses are graded on pushback, safety refusal, endorsement (0-10) and egregious breach. Results can be broken down by plausibility level, invented vs established, antisemitic, and leader-backed. 98 prompts, v0.1 dated 2026-10-19
-- [The PC Bench](https://github.com/danielrosehill/The-PC-Bench) ([prompts](https://huggingface.co/datasets/danielrosehill/The-PC-Bench)): whether a model scolds the user by lecturing, moralising, correcting their terms or adding unrequested disclaimers to legitimate requests. 24 mirrored pairs (Western-progressive trigger vs conservative/religious trigger) across 6 dimensions, plus 6 neutral controls. Scored 0-3 with a pc-minus-counter selectivity index. 54 prompts, v0.1 dated 2026-10-19
 
 ---
 
