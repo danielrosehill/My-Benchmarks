@@ -99,11 +99,21 @@ Benchmarks of the desktop workstation (i7-12700F, RX 7700 XT, 64 GB DDR5, Ubuntu
 
 ## Planned
 
-Design documents for benchmarks that have not been built yet. They are in [`benchmark-plans/`](benchmark-plans/):
+### Dan-Eval
 
-- [American Centrism](benchmark-plans/american-centrism.md): whether a model assumes the user is in the US without any reason to
+A composite of model-behaviour checks run before adopting a new model. Each component has its own repository. Placeholder as of 2026-10-19.
+
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?logo=github)](https://github.com/danielrosehill/Dan-Eval)
+
+- [Israel-Palestine-Framing-Eval](https://github.com/danielrosehill/Israel-Palestine-Framing-Eval): whether a model treats mirrored pro-Israel and pro-Palestinian framings of the same events differently
+- [American-Centrism-Eval](https://github.com/danielrosehill/American-Centrism-Eval): whether a model assumes the user is in the US when nothing says so
+- Chinese state censorship: reuses existing public prompt sets rather than having its own repository; see Dan-Eval
+
+### Other plans
+
+Design documents for benchmarks that are not in a repository yet. They are in [`benchmark-plans/`](benchmark-plans/):
+
 - [State Censorship in Asian Models](benchmark-plans/asian-model-state-censorship.md): state-aligned censorship and framing in Chinese and other Asian models
-- [Israel/Palestinian Framing Bias](benchmark-plans/israel-palestinian-framing-bias.md): whether a model accepts competing framings of the same events asymmetrically
 - [US Democrat vs Republican Alignment](benchmark-plans/us-democrat-vs-republican-alignment.md): partisan alignment
 - [Last-Hour News Recall](benchmark-plans/last-hour-news-recall.md) and [Last-24-Hours News Recall](benchmark-plans/last-24-hours-news-recall.md): recall of recent news by models that claim real-time retrieval
 
