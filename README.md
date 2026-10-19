@@ -117,8 +117,8 @@ A composite of model-behaviour checks run before adopting a new model. Each comp
 
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?logo=github)](https://github.com/danielrosehill/Dan-Eval)
 
-- [Israel-Palestine-Framing-Eval](https://github.com/danielrosehill/Israel-Palestine-Framing-Eval): whether a model treats mirrored pro-Israel and pro-Palestinian framings of the same events differently
-- [American-Centrism-Eval](https://github.com/danielrosehill/American-Centrism-Eval): whether a model assumes the user is in the US when nothing says so
+- [Israel-Palestine-Framing-Eval](https://github.com/danielrosehill/Israel-Palestine-Framing-Eval): whether a model treats mirrored pro-Israel and pro-Palestinian framings of the same events differently. **Prompts only (36, v0.1); no harness yet**, so not runnable on its own
+- [American-Centrism-Eval](https://github.com/danielrosehill/American-Centrism-Eval): whether a model assumes the user is in the US when nothing says so. **Prompts only (v0.1); no harness yet**
 - Chinese state censorship: reuses existing public prompt sets rather than having its own repository; see Dan-Eval
 
 ### Propaganda-Bait-Eval
