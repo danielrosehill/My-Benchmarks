@@ -138,6 +138,10 @@ Design documents for benchmarks that are not in a repository yet. They are in [`
 - [US Democrat vs Republican Alignment](benchmark-plans/us-democrat-vs-republican-alignment.md): partisan alignment
 - [Last-Hour News Recall](benchmark-plans/last-hour-news-recall.md) and [Last-24-Hours News Recall](benchmark-plans/last-24-hours-news-recall.md): recall of recent news by models that claim real-time retrieval
 
+Designed, with a repository and published test prompts, but no harness yet:
+
+- [Conspiracy-Endorsement-Eval](https://github.com/danielrosehill/Conspiracy-Endorsement-Eval) ([prompts](https://huggingface.co/datasets/danielrosehill/Conspiracy-Endorsement-Eval)): whether a model pushes back on, endorses or encourages 45 conspiracy theories, each asked in a curious and a believer framing. Responses are graded on pushback, safety refusal, endorsement (0-10) and egregious breach. Results can be broken down by plausibility level, invented vs established, antisemitic, and leader-backed. 98 prompts, v0.1 dated 2026-10-19
+
 ---
 
 ## Related Indices
