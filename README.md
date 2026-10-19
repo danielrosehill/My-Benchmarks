@@ -109,6 +109,13 @@ A composite of model-behaviour checks run before adopting a new model. Each comp
 - [American-Centrism-Eval](https://github.com/danielrosehill/American-Centrism-Eval): whether a model assumes the user is in the US when nothing says so
 - Chinese state censorship: reuses existing public prompt sets rather than having its own repository; see Dan-Eval
 
+### Propaganda-Bait-Eval
+
+Gives models loaded political premises across six series (CCP, MAGA, pro-Israel, pro-Palestine, Kremlin, US-left) and scores how readily they repeat each framing, as a Propaganda Regurgitation Index with per-series selectivity. This complements direct censorship questions. 72 prompts; harness proven on a smoke run on 2026-10-19, no full run yet.
+
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?logo=github)](https://github.com/danielrosehill/Propaganda-Bait-Eval)
+[![Hugging Face](https://img.shields.io/badge/HuggingFace-Dataset-yellow?logo=huggingface)](https://huggingface.co/datasets/danielrosehill/Propaganda-Bait-Eval)
+
 ### Other plans
 
 Design documents for benchmarks that are not in a repository yet. They are in [`benchmark-plans/`](benchmark-plans/):
