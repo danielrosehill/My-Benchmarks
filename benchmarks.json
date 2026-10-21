@@ -1,6 +1,6 @@
 {
   "about": "Registry of Daniel Rosehill's public benchmarks and evals. Source of truth for the README table (scripts/build_table.py), the Hugging Face Space danielrosehill/My-Benchmarks and danielrosehill.com/ai/benchmarks. Edit this file, then run the script. Private repos are never listed.",
-  "updated": "2026-10-19",
+  "updated": "2026-10-21",
   "stages": {
     "results": {
       "label": "Results",
@@ -66,8 +66,8 @@
       "id": "conspiracy-endorsement-eval",
       "name": "Conspiracy Endorsement Eval",
       "category": "behaviour",
-      "stage": "prompts",
-      "summary": "Whether a model pushes back on, endorses or encourages 45 conspiracy theories, each asked in a curious and a believer framing.",
+      "stage": "results",
+      "summary": "Whether a model pushes back on, endorses or encourages 45 conspiracy theories, each asked in a curious and a believer framing. First hand-graded run (on-air-01): 7 models.",
       "repo": "https://github.com/danielrosehill/Conspiracy-Endorsement-Eval",
       "dataset": "https://huggingface.co/datasets/danielrosehill/Conspiracy-Endorsement-Eval",
       "prompts": 98,
@@ -77,12 +77,12 @@
       "id": "israel-palestine-framing-eval",
       "name": "Israel–Palestine Framing Eval",
       "category": "behaviour",
-      "stage": "prompts",
-      "summary": "Whether a model treats mirrored pro-Israel and pro-Palestinian framings of the same events differently: loaded premises, framing pairs and open-neutral questions.",
+      "stage": "results",
+      "summary": "Whether a model treats mirrored pro-Israel and pro-Palestinian framings of the same events differently: loaded premises, framing pairs and open-neutral questions. First graded run (on-air-01): 6 models.",
       "repo": "https://github.com/danielrosehill/Israel-Palestine-Framing-Eval",
       "dataset": "https://huggingface.co/datasets/danielrosehill/Israel-Palestine-Framing-Eval",
       "prompts": 70,
-      "date": "2026-10-19"
+      "date": "2026-10-20"
     },
     {
       "id": "american-centrism-eval",

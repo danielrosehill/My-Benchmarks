@@ -24,17 +24,17 @@ Built and Prompts only are finished work, not plans. They are public seeds, for 
 ## At a Glance
 
 <!-- table:start -->
-21 entries, generated from [`benchmarks.json`](benchmarks.json) (updated 2026-10-19). Also browsable as a [Hugging Face Space](https://huggingface.co/spaces/danielrosehill/My-Benchmarks).
+21 entries, generated from [`benchmarks.json`](benchmarks.json) (updated 2026-10-21). Also browsable as a [Hugging Face Space](https://huggingface.co/spaces/danielrosehill/My-Benchmarks).
 
 Stages: **Results**: Run, with published results; **Built**: Repo, test material and harness exist; not yet fully run; **Prompts only**: Repo and published test prompts; no harness yet; **Planned**: Design only: a plan file, or a public repo with no test prompts yet.
 
 | Benchmark | Area | Stage | Repo | Test data / prompts | Prompts |
 |---|---|---|---|---|---|
+| **Conspiracy Endorsement Eval** | Model behaviour & AI safety | Results | [GitHub](https://github.com/danielrosehill/Conspiracy-Endorsement-Eval) | [Conspiracy-Endorsement-Eval](https://huggingface.co/datasets/danielrosehill/Conspiracy-Endorsement-Eval) | 98 |
+| **Israel–Palestine Framing Eval** | Model behaviour & AI safety | Results | [GitHub](https://github.com/danielrosehill/Israel-Palestine-Framing-Eval) | [Israel-Palestine-Framing-Eval](https://huggingface.co/datasets/danielrosehill/Israel-Palestine-Framing-Eval) | 70 |
 | **Dan-Eval** | Model behaviour & AI safety | Built | [GitHub](https://github.com/danielrosehill/Dan-Eval) |  |  |
 | **Propaganda Bait Eval** | Model behaviour & AI safety | Built | [GitHub](https://github.com/danielrosehill/Propaganda-Bait-Eval) | [Propaganda-Bait-Eval](https://huggingface.co/datasets/danielrosehill/Propaganda-Bait-Eval) | 72 |
 | **American Centrism Eval** | Model behaviour & AI safety | Prompts only | [GitHub](https://github.com/danielrosehill/American-Centrism-Eval) | [American-Centrism-Eval](https://huggingface.co/datasets/danielrosehill/American-Centrism-Eval) | 48 |
-| **Conspiracy Endorsement Eval** | Model behaviour & AI safety | Prompts only | [GitHub](https://github.com/danielrosehill/Conspiracy-Endorsement-Eval) | [Conspiracy-Endorsement-Eval](https://huggingface.co/datasets/danielrosehill/Conspiracy-Endorsement-Eval) | 98 |
-| **Israel–Palestine Framing Eval** | Model behaviour & AI safety | Prompts only | [GitHub](https://github.com/danielrosehill/Israel-Palestine-Framing-Eval) | [Israel-Palestine-Framing-Eval](https://huggingface.co/datasets/danielrosehill/Israel-Palestine-Framing-Eval) | 70 |
 | **The PC Bench** | Model behaviour & AI safety | Prompts only | [GitHub](https://github.com/danielrosehill/The-PC-Bench) | [The-PC-Bench](https://huggingface.co/datasets/danielrosehill/The-PC-Bench) | 54 |
 | **US Partisan Framing Eval** | Model behaviour & AI safety | Prompts only | [GitHub](https://github.com/danielrosehill/US-Partisan-Framing-Eval) | [US-Partisan-Framing-Eval](https://huggingface.co/datasets/danielrosehill/US-Partisan-Framing-Eval) | 54 |
 | **Last-24-Hours News Recall** | Model behaviour & AI safety | Planned | [Plan](https://github.com/danielrosehill/My-Benchmarks/blob/master/benchmark-plans/last-24-hours-news-recall.md) |  |  |
@@ -144,6 +144,26 @@ Benchmarks of the desktop workstation (i7-12700F, RX 7700 XT, 64 GB DDR5, Ubuntu
 
 ---
 
+## Model Behaviour
+
+Behaviour evals with a first published run. Both runs are small, one sample per prompt, so read them as a first look. Charts: [danielrosehill.com/ai/benchmarks](https://danielrosehill.com/ai/benchmarks#results).
+
+### Conspiracy-Endorsement-Eval
+
+Whether a model pushes back on, endorses or encourages 45 conspiracy theories, each asked in a curious and a believer framing. Responses are graded on pushback, safety refusal, endorsement (0-10) and egregious breach. 98 prompts, v0.1 dated 2026-10-19. First run `on-air-01` (2026-10-19): 6 theories plus the MKUltra control, 7 models, graded by hand. Grok 4.7 and GPT-6.1 Sol pushed back on all 6 theories; Dolphin, MythoMax and Llama 3.2 1B pushed back on at most 2. Grades: [`charts/on-air-01-grades.csv`](https://github.com/danielrosehill/Conspiracy-Endorsement-Eval/blob/main/charts/on-air-01-grades.csv).
+
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?logo=github)](https://github.com/danielrosehill/Conspiracy-Endorsement-Eval)
+[![Hugging Face](https://img.shields.io/badge/HuggingFace-Dataset-yellow?logo=huggingface)](https://huggingface.co/datasets/danielrosehill/Conspiracy-Endorsement-Eval)
+
+### Israel-Palestine-Framing-Eval
+
+Whether a model treats mirrored pro-Israel and pro-Palestinian framings of the same events differently: loaded premises, framing pairs and open-neutral questions. 70 prompts, v0.2. First run `on-air-01` (2026-10-20): 19 prompts, 6 models, graded against the rubric. Only Dolphin Mistral 24B Venice hard-failed (4 of 14 loaded premises, two per side). Run files: [Israel-Palestine-Framing-Eval-Runs](https://huggingface.co/datasets/danielrosehill/Israel-Palestine-Framing-Eval-Runs).
+
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?logo=github)](https://github.com/danielrosehill/Israel-Palestine-Framing-Eval)
+[![Hugging Face](https://img.shields.io/badge/HuggingFace-Dataset-yellow?logo=huggingface)](https://huggingface.co/datasets/danielrosehill/Israel-Palestine-Framing-Eval)
+
+---
+
 ## Built, Not Yet Run
 
 Evals whose framework is complete (repo, test prompts, harness) but that have not had a full run yet. Dan-Eval's components are listed with it; their own stage is noted on each.
@@ -154,7 +174,7 @@ A composite of model-behaviour checks run before adopting a new model. Each comp
 
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?logo=github)](https://github.com/danielrosehill/Dan-Eval)
 
-- [Israel-Palestine-Framing-Eval](https://github.com/danielrosehill/Israel-Palestine-Framing-Eval): whether a model treats mirrored pro-Israel and pro-Palestinian framings of the same events differently. **Prompts only (70, v0.2: loaded premises, framing pairs, open-neutral); no harness yet**, so not runnable on its own
+- [Israel-Palestine-Framing-Eval](https://github.com/danielrosehill/Israel-Palestine-Framing-Eval): whether a model treats mirrored pro-Israel and pro-Palestinian framings of the same events differently. 70 prompts (v0.2); a first graded run exists, see **Model Behaviour** above
 - [American-Centrism-Eval](https://github.com/danielrosehill/American-Centrism-Eval): whether a model assumes the user is in the US when nothing says so. **Prompts only (v0.1); no harness yet**
 - Chinese state censorship: reuses existing public prompt sets rather than having its own repository; see Dan-Eval
 
@@ -171,7 +191,6 @@ Gives models loaded political premises across six series (CCP, MAGA, pro-Israel,
 
 Public repos with the design and published test prompts, but no harness yet. The Dan-Eval components above are also at this stage.
 
-- [Conspiracy-Endorsement-Eval](https://github.com/danielrosehill/Conspiracy-Endorsement-Eval) ([prompts](https://huggingface.co/datasets/danielrosehill/Conspiracy-Endorsement-Eval)): whether a model pushes back on, endorses or encourages 45 conspiracy theories, each asked in a curious and a believer framing. Responses are graded on pushback, safety refusal, endorsement (0-10) and egregious breach. Results can be broken down by plausibility level, invented vs established, antisemitic, and leader-backed. 98 prompts, v0.1 dated 2026-10-19
 - [The PC Bench](https://github.com/danielrosehill/The-PC-Bench) ([prompts](https://huggingface.co/datasets/danielrosehill/The-PC-Bench)): whether a model scolds the user by lecturing, moralising, correcting their terms or adding unrequested disclaimers to legitimate requests. 24 mirrored pairs (Western-progressive trigger vs conservative/religious trigger) across 6 dimensions, plus 6 neutral controls. Scored 0-3 with a pc-minus-counter selectivity index. 54 prompts, v0.1 dated 2026-10-19
 - [US-Partisan-Framing-Eval](https://github.com/danielrosehill/US-Partisan-Framing-Eval) ([prompts](https://huggingface.co/datasets/danielrosehill/US-Partisan-Framing-Eval)): asked an innocent question about a divisive US issue, whether a model answers with the popular Democratic or Republican framing, and on foreign policy, hawkish or dovish. Graded blind against anchors for each pole, as a signed lean index. 42 probes across 14 topics plus 12 factual controls, 54 prompts, v0.1 dated 2026-10-19. Graduated from the plan `benchmark-plans/us-democrat-vs-republican-alignment.md` (deleted)
 
