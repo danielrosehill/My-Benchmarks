@@ -232,10 +232,10 @@
       "name": "Tech Graphics Benchmark",
       "category": "image",
       "stage": "prompts",
-      "summary": "Lightweight periodic check of whether image models can make colourful, stylised tech diagrams with exact text and correct arrows. Text-to-image and image-to-image (whiteboard restyling), human-graded.",
+      "summary": "Lightweight periodic check of whether image models can make colourful, stylised tech diagrams with exact text and correct arrows. Text-to-image and image-to-image (whiteboard restyling), plus a gated Hebrew and mixed Hebrew/English track; cheap models on fal, two generations each, human-graded.",
       "repo": "https://github.com/danielrosehill/Tech-Graphics-Benchmark",
       "dataset": "https://huggingface.co/datasets/danielrosehill/Tech-Graphics-Benchmark",
-      "prompts": 6,
+      "prompts": 9,
       "date": "2026-10-28"
     }
   ]
