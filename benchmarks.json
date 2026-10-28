@@ -235,7 +235,7 @@
       "summary": "Lightweight periodic check of whether image models can make colourful, stylised tech diagrams with exact text and correct arrows. Text-to-image and image-to-image (whiteboard restyling), human-graded.",
       "repo": "https://github.com/danielrosehill/Tech-Graphics-Benchmark",
       "dataset": "https://huggingface.co/datasets/danielrosehill/Tech-Graphics-Benchmark",
-      "prompts": 4,
+      "prompts": 6,
       "date": "2026-10-28"
     }
   ]
