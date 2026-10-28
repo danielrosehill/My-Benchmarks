@@ -1,6 +1,6 @@
 {
   "about": "Registry of Daniel Rosehill's public benchmarks and evals. Source of truth for the README table (scripts/build_table.py), the Hugging Face Space danielrosehill/My-Benchmarks and danielrosehill.com/ai/benchmarks. Edit this file, then run the script. Private repos are never listed.",
-  "updated": "2026-10-21",
+  "updated": "2026-10-28",
   "stages": {
     "results": {
       "label": "Results",
@@ -226,6 +226,17 @@
       "stage": "planned",
       "summary": "Recall of the past day's news by models that claim real-time retrieval.",
       "plan": "https://github.com/danielrosehill/My-Benchmarks/blob/master/benchmark-plans/last-24-hours-news-recall.md"
+    },
+    {
+      "id": "tech-graphics-benchmark",
+      "name": "Tech Graphics Benchmark",
+      "category": "image",
+      "stage": "prompts",
+      "summary": "Lightweight periodic check of whether image models can make colourful, stylised tech diagrams with exact text and correct arrows. Text-to-image and image-to-image (whiteboard restyling), human-graded.",
+      "repo": "https://github.com/danielrosehill/Tech-Graphics-Benchmark",
+      "dataset": "https://huggingface.co/datasets/danielrosehill/Tech-Graphics-Benchmark",
+      "prompts": 4,
+      "date": "2026-10-28"
     }
   ]
 }
