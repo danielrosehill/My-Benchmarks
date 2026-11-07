@@ -1,0 +1,31 @@
+:root{--bg:#f7f7f4;--card:#fff;--ink:#1d2327;--muted:#5d676e;--line:#dfe2dd;--accent:#0b6e69;--soft:#e3f1ef;--gate:#8a5a00;--gatebg:#fbf0d9}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:1080px;margin:0 auto;padding:32px 20px 56px}
+a{color:var(--accent)}
+h1{font-size:2rem;line-height:1.2;margin:0 0 8px}
+h2{font-size:1.15rem;margin:32px 0 12px}
+.lede{color:var(--muted);max-width:72ch;margin:0 0 14px}
+nav.links{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0 0 20px;font-size:.95rem}
+nav.tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);margin:0 0 22px}
+nav.tabs a{padding:8px 14px;text-decoration:none;color:var(--muted);border-bottom:3px solid transparent}
+nav.tabs a[aria-current]{color:var(--ink);border-color:var(--accent);font-weight:600}
+.stats{display:flex;flex-wrap:wrap;gap:10px 28px;margin:0 0 20px;color:var(--muted);font-size:.95rem}
+.stats b{color:var(--ink);font-size:1.15rem}
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:6px}
+input[type=search]{flex:1 1 240px;padding:9px 12px;border:1px solid var(--line);border-radius:6px;font:inherit;background:#fff}
+select{padding:9px 10px;border:1px solid var(--line);border-radius:6px;font:inherit;background:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.card.master{grid-column:1/-1;border-color:var(--accent);border-width:2px}
+.who{display:flex;align-items:center;gap:8px;font-size:.82rem;color:var(--muted)}
+.who img{width:24px;height:24px;border-radius:5px;object-fit:cover}
+.card h3{margin:0;font-size:1.05rem;line-height:1.3}
+.card h3 a{text-decoration:none;color:var(--ink)}
+.card h3 a:hover{color:var(--accent);text-decoration:underline}
+.card p{margin:0;color:var(--muted);font-size:.93rem}
+.meta{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:.84rem;color:var(--muted);margin-top:auto;align-items:center}
+.badge{background:var(--gatebg);color:var(--gate);padding:1px 7px;border-radius:4px}
+.empty{color:var(--muted);padding:24px 0}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:.86rem}
+@media(max-width:520px){h1{font-size:1.6rem}main{padding:22px 14px 40px}}

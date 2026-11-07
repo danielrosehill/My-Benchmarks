@@ -35,6 +35,8 @@ def render(reg):
         data = link(b.get("dataset"), hf_label(b.get("dataset")))
         if b.get("space"):
             data = (data + " · " if data else "") + link(b["space"], "Space")
+        for extra in b.get("links", []):
+            data = (data + " · " if data else "") + link(extra["url"], extra["url"].rstrip("/").split("/")[-1])
         out.append(
             f"| **{b['name']}** | {reg['categories'][b['category']]} | {reg['stages'][b['stage']]['label']} | {repo} | {data} | {b.get('prompts', '')} |"
         )

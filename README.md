@@ -4,9 +4,9 @@
 
 Index of benchmarks authored by Daniel Rosehill — systematic, repeatable performance comparisons across AI models, tools, or systems.
 
-**Last Updated:** 2026-10-19
+**Last Updated:** 2026-11-07
 
-**Inclusion rule:** a public repository that scores several models, tools or hardware configurations against the same test material. One-off probes and qualitative experiments belong in the sibling [Experiments And Evaluations Index](https://github.com/danielrosehill/Experiments-And-Evaluations-Index). Private repositories are never listed here.
+**Inclusion rule:** a public GitHub or Hugging Face repository that scores several models, tools or hardware configurations against the same test material. One-off probes and qualitative experiments belong in the sibling [Experiments And Evaluations Index](https://github.com/danielrosehill/Experiments-And-Evaluations-Index). Private repositories are never listed here.
 
 **Lifecycle.** Each entry is in one of four stages. The stage is the `stage` field in `benchmarks.json`, and the entry's section below matches it:
 
@@ -24,32 +24,36 @@ Built and Prompts only are finished work, not plans. They are public seeds, for 
 ## At a Glance
 
 <!-- table:start -->
-22 entries, generated from [`benchmarks.json`](benchmarks.json) (updated 2026-10-28). Also browsable as a [Hugging Face Space](https://huggingface.co/spaces/danielrosehill/My-Benchmarks).
+26 entries, generated from [`benchmarks.json`](benchmarks.json) (updated 2026-11-07). Also browsable as a [Hugging Face Space](https://huggingface.co/spaces/danielrosehill/My-Benchmarks).
 
 Stages: **Results**: Run, with published results; **Built**: Repo, test material and harness exist; not yet fully run; **Prompts only**: Repo and published test prompts; no harness yet; **Planned**: Design only: a plan file, or a public repo with no test prompts yet.
 
 | Benchmark | Area | Stage | Repo | Test data / prompts | Prompts |
 |---|---|---|---|---|---|
-| **Conspiracy Endorsement Eval** | Model behaviour & AI safety | Results | [GitHub](https://github.com/danielrosehill/Conspiracy-Endorsement-Eval) | [Conspiracy-Endorsement-Eval](https://huggingface.co/datasets/danielrosehill/Conspiracy-Endorsement-Eval) | 98 |
-| **Israel–Palestine Framing Eval** | Model behaviour & AI safety | Results | [GitHub](https://github.com/danielrosehill/Israel-Palestine-Framing-Eval) | [Israel-Palestine-Framing-Eval](https://huggingface.co/datasets/danielrosehill/Israel-Palestine-Framing-Eval) | 70 |
+| **Conspiracy Endorsement Eval** | Model behaviour & AI safety | Results | [GitHub](https://github.com/danielrosehill/Conspiracy-Endorsement-Eval) | [Conspiracy-Endorsement-Eval](https://huggingface.co/datasets/danielrosehill/Conspiracy-Endorsement-Eval) · [Conspiracy-Endorsement-Eval-Runs](https://huggingface.co/datasets/danielrosehill/Conspiracy-Endorsement-Eval-Runs) | 98 |
+| **Israel–Palestine Framing Eval** | Model behaviour & AI safety | Results | [GitHub](https://github.com/danielrosehill/Israel-Palestine-Framing-Eval) | [Israel-Palestine-Framing-Eval](https://huggingface.co/datasets/danielrosehill/Israel-Palestine-Framing-Eval) · [Israel-Palestine-Framing-Eval-Runs](https://huggingface.co/datasets/danielrosehill/Israel-Palestine-Framing-Eval-Runs) | 70 |
 | **Dan-Eval** | Model behaviour & AI safety | Built | [GitHub](https://github.com/danielrosehill/Dan-Eval) |  |  |
-| **Propaganda Bait Eval** | Model behaviour & AI safety | Built | [GitHub](https://github.com/danielrosehill/Propaganda-Bait-Eval) | [Propaganda-Bait-Eval](https://huggingface.co/datasets/danielrosehill/Propaganda-Bait-Eval) | 72 |
+| **Propaganda Bait Eval** | Model behaviour & AI safety | Built | [GitHub](https://github.com/danielrosehill/Propaganda-Bait-Eval) | [Propaganda-Bait-Eval](https://huggingface.co/datasets/danielrosehill/Propaganda-Bait-Eval) · [Propaganda-Bait-Eval-Runs](https://huggingface.co/datasets/danielrosehill/Propaganda-Bait-Eval-Runs) | 72 |
 | **American Centrism Eval** | Model behaviour & AI safety | Prompts only | [GitHub](https://github.com/danielrosehill/American-Centrism-Eval) | [American-Centrism-Eval](https://huggingface.co/datasets/danielrosehill/American-Centrism-Eval) | 48 |
 | **The PC Bench** | Model behaviour & AI safety | Prompts only | [GitHub](https://github.com/danielrosehill/The-PC-Bench) | [The-PC-Bench](https://huggingface.co/datasets/danielrosehill/The-PC-Bench) | 54 |
 | **US Partisan Framing Eval** | Model behaviour & AI safety | Prompts only | [GitHub](https://github.com/danielrosehill/US-Partisan-Framing-Eval) | [US-Partisan-Framing-Eval](https://huggingface.co/datasets/danielrosehill/US-Partisan-Framing-Eval) | 54 |
 | **Last-24-Hours News Recall** | Model behaviour & AI safety | Planned | [Plan](https://github.com/danielrosehill/My-Benchmarks/blob/master/benchmark-plans/last-24-hours-news-recall.md) |  |  |
 | **Last-Hour News Recall** | Model behaviour & AI safety | Planned | [Plan](https://github.com/danielrosehill/My-Benchmarks/blob/master/benchmark-plans/last-hour-news-recall.md) |  |  |
 | **State Censorship in Asian Models** | Model behaviour & AI safety | Planned | [Plan](https://github.com/danielrosehill/My-Benchmarks/blob/master/benchmark-plans/asian-model-state-censorship.md) |  |  |
-| **Audio Understanding Bitrate Eval** | Speech recognition & audio | Results | [GitHub](https://github.com/danielrosehill/Audio-Understanding-Bitrate-Eval-0426) | [Audio-Understanding-Bitrate-Eval-0426](https://huggingface.co/datasets/danielrosehill/Audio-Understanding-Bitrate-Eval-0426) |  |
-| **English–Hebrew Code-Switching ASR Benchmark** | Speech recognition & audio | Results | [GitHub](https://github.com/Hebrish-ASR/English-Hebrew-Codeswitching-ASR-Benchmark) | [English-Hebrew-Codeswitching-ASR-Benchmark](https://huggingface.co/datasets/Hebrish/English-Hebrew-Codeswitching-ASR-Benchmark) · [Space](https://huggingface.co/spaces/danielrosehill/English-Hebrew-Codeswitching-ASR-Leaderboard) |  |
-| **Local ASR STT Benchmark** | Speech recognition & audio | Results | [GitHub](https://github.com/danielrosehill/Local-ASR-STT-Benchmark) |  |  |
+| **Audio Understanding Bitrate Eval** | Speech recognition & audio | Results | [GitHub](https://github.com/danielrosehill/Audio-Understanding-Bitrate-Eval-0426) | [Audio-Understanding-Bitrate-Eval-0426](https://huggingface.co/datasets/danielrosehill/Audio-Understanding-Bitrate-Eval-0426) · [Space](https://huggingface.co/spaces/danielrosehill/Audio-Understanding-Experiment) · [Audio-Understanding-Test-Set](https://huggingface.co/datasets/danielrosehill/Audio-Understanding-Test-Set) |  |
+| **English–Hebrew Code-Switching ASR Benchmark** | Speech recognition & audio | Results | [GitHub](https://github.com/Hebrish-ASR/English-Hebrew-Codeswitching-ASR-Benchmark) | [English-Hebrew-Codeswitching-ASR-Benchmark](https://huggingface.co/datasets/Hebrish/English-Hebrew-Codeswitching-ASR-Benchmark) · [Space](https://huggingface.co/spaces/danielrosehill/English-Hebrew-Codeswitching-ASR-Leaderboard) · [Hebrish-Validation](https://huggingface.co/datasets/Hebrish/Hebrish-Validation) |  |
+| **Local ASR STT Benchmark** | Speech recognition & audio | Results | [GitHub](https://github.com/danielrosehill/Local-ASR-STT-Benchmark) | [Space](https://huggingface.co/spaces/danielrosehill/Single-Shot-ASR-Eval) |  |
 | **Long-Form Audio Eval** | Speech recognition & audio | Results | [GitHub](https://github.com/danielrosehill/Long-Form-Audio-Eval) |  |  |
 | **One-Shot Transcription Microphone Eval** | Speech recognition & audio | Results | [GitHub](https://github.com/danielrosehill/One-Shot-Transcription-Microphone-Eval) |  |  |
+| **Podcast ASR Evaluation** | Speech recognition & audio | Results |  | [Podcast-ASR-Evaluation](https://huggingface.co/datasets/danielrosehill/Podcast-ASR-Evaluation) · [Space](https://huggingface.co/spaces/danielrosehill/Single-Podcast-ASR-Eval) |  |
 | **Transcription Cleanup Eval** | Speech recognition & audio | Results | [GitHub](https://github.com/danielrosehill/Transcription-Cleanup-Eval-1225) |  |  |
-| **Whisper Fine-Tune Accuracy Eval** | Speech recognition & audio | Results | [GitHub](https://github.com/danielrosehill/Whisper-Fine-Tune-Accuracy-Eval) |  |  |
+| **Voice Note STT Evaluation** | Speech recognition & audio | Results | [GitHub](https://github.com/danielrosehill/STT-Voice-Note-Evaluation) | [STT-Voice-Notes-Evals](https://huggingface.co/datasets/danielrosehill/STT-Voice-Notes-Evals) · [Space](https://huggingface.co/spaces/danielrosehill/STT-Comparison) · [Noisy-Voice-Notes](https://huggingface.co/datasets/danielrosehill/Noisy-Voice-Notes) · [Small-STT-Eval-Audio-Dataset](https://huggingface.co/datasets/danielrosehill/Small-STT-Eval-Audio-Dataset) · [Local-STT-Eval-One-Sample](https://huggingface.co/spaces/danielrosehill/Local-STT-Eval-One-Sample) |  |
+| **Whisper Fine-Tune Accuracy Eval** | Speech recognition & audio | Results | [GitHub](https://github.com/danielrosehill/Whisper-Fine-Tune-Accuracy-Eval) | [Whisper-Fine-Tune-One-Shot-Eval](https://huggingface.co/datasets/danielrosehill/Whisper-Fine-Tune-One-Shot-Eval) · [Space](https://huggingface.co/spaces/danielrosehill/Whisper-Fine-Tune-Eval) · [STT-Fine-Tune-Eval-101225](https://huggingface.co/datasets/danielrosehill/STT-Fine-Tune-Eval-101225) |  |
 | **Whisper WPM & Background Noise Eval** | Speech recognition & audio | Results | [GitHub](https://github.com/danielrosehill/Whisper-WPM-Background-Noise-Eval) | [ASR-WPM-And-Background-Noise-Eval](https://huggingface.co/datasets/danielrosehill/ASR-WPM-And-Background-Noise-Eval) |  |
+| **Parakeet Dictation Cleanup Eval** | Speech recognition & audio | Planned |  | [Parakeet-Dictation-Cleanup-Eval](https://huggingface.co/datasets/danielrosehill/Parakeet-Dictation-Cleanup-Eval) |  |
 | **Hebrew Image Generation Eval** | Image generation | Results | [GitHub](https://github.com/danielrosehill/Hebrew-Image-Generation-Eval) | [Hebrew-Image-Eval-111225](https://huggingface.co/datasets/danielrosehill/Hebrew-Image-Eval-111225) |  |
-| **Tech Graphics Benchmark** | Image generation | Prompts only | [GitHub](https://github.com/danielrosehill/Tech-Graphics-Benchmark) | [Tech-Graphics-Benchmark](https://huggingface.co/datasets/danielrosehill/Tech-Graphics-Benchmark) | 9 |
+| **Tech Graphics Benchmark** | Image generation | Results | [GitHub](https://github.com/danielrosehill/Tech-Graphics-Benchmark) | [Tech-Graphics-Benchmark](https://huggingface.co/datasets/danielrosehill/Tech-Graphics-Benchmark) · [Tech-Graphics-Benchmark-Runs](https://huggingface.co/datasets/danielrosehill/Tech-Graphics-Benchmark-Runs) · [Tech-Graphics-Benchmark-Ratings](https://huggingface.co/datasets/danielrosehill/Tech-Graphics-Benchmark-Ratings) | 9 |
+| **Text-To-Image Test Prompts** | Image generation | Prompts only | [GitHub](https://github.com/danielrosehill/Text-To-Image-Test-Prompts) | [Text-To-Image-Test-Prompts](https://huggingface.co/datasets/danielrosehill/Text-To-Image-Test-Prompts) |  |
 | **Gemma 4 Benchmarks** | Local inference & hardware | Results | [GitHub](https://github.com/danielrosehill/Gemma-4-Benchmarks-0426) |  |  |
 | **Workstation Benchmarks** | Local inference & hardware | Results | [GitHub](https://github.com/danielrosehill/Workstation-Benchmarks-0226) |  |  |
 <!-- table:end -->
@@ -119,6 +123,13 @@ Whisper model sizes compared in Speech Note on Ubuntu with AMD/ROCm hardware. A 
 ---
 
 ## Image Generation
+
+### Tech Graphics Benchmark
+
+Whether image models can make colourful, stylised tech diagrams with exact text and correct arrows. First look: [Can image models spell the labels?](https://blog.danielrosehill.com/posts/tech-graphics-benchmark-image-models-exact-text-first-look-i1f860/)
+
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?logo=github)](https://github.com/danielrosehill/Tech-Graphics-Benchmark)
+[![Hugging Face](https://img.shields.io/badge/HuggingFace-Dataset-yellow?logo=huggingface)](https://huggingface.co/datasets/danielrosehill/Tech-Graphics-Benchmark)
 
 ### Hebrew Image Generation Eval
 
@@ -192,7 +203,6 @@ Gives models loaded political premises across six series (CCP, MAGA, pro-Israel,
 
 Public repos with the design and published test prompts, but no harness yet. The Dan-Eval components above are also at this stage.
 
-- [Tech-Graphics-Benchmark](https://github.com/danielrosehill/Tech-Graphics-Benchmark) ([prompts](https://huggingface.co/datasets/danielrosehill/Tech-Graphics-Benchmark)): whether image models can make colourful, stylised (anime, manga) tech diagrams without losing the meaning: exact label text and correct arrows. Four text-to-image prompts (exact and descriptive, mostly blog banners), two image-to-image whiteboard restylings, and a gated Hebrew track (Hebrew-only and mixed Hebrew/English diagrams), graded by hand (text exact, structure, meaning, notes) in a private annotation Space. Runs a panel of cheap models on fal, two generations each. 9 prompts, dated 2026-10-28
 - [The PC Bench](https://github.com/danielrosehill/The-PC-Bench) ([prompts](https://huggingface.co/datasets/danielrosehill/The-PC-Bench)): whether a model scolds the user by lecturing, moralising, correcting their terms or adding unrequested disclaimers to legitimate requests. 24 mirrored pairs (Western-progressive trigger vs conservative/religious trigger) across 6 dimensions, plus 6 neutral controls. Scored 0-3 with a pc-minus-counter selectivity index. 54 prompts, v0.1 dated 2026-10-19
 - [US-Partisan-Framing-Eval](https://github.com/danielrosehill/US-Partisan-Framing-Eval) ([prompts](https://huggingface.co/datasets/danielrosehill/US-Partisan-Framing-Eval)): asked an innocent question about a divisive US issue, whether a model answers with the popular Democratic or Republican framing, and on foreign policy, hawkish or dovish. Graded blind against anchors for each pole, as a signed lean index. 42 probes across 14 topics plus 12 factual controls, 54 prompts, v0.1 dated 2026-10-19. Graduated from the plan `benchmark-plans/us-democrat-vs-republican-alignment.md` (deleted)
 

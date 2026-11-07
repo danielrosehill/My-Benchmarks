@@ -1,6 +1,6 @@
 {
-  "about": "Registry of Daniel Rosehill's public benchmarks and evals. Source of truth for the README table (scripts/build_table.py), the Hugging Face Space danielrosehill/My-Benchmarks and danielrosehill.com/ai/benchmarks. Edit this file, then run the script. Private repos are never listed.",
-  "updated": "2026-10-28",
+  "about": "Registry of Daniel Rosehill's public benchmarks and evals. Source of truth for the README table (scripts/build_table.py), the Hugging Face Space danielrosehill/My-Benchmarks and danielrosehill.com/ai/benchmarks. Edit this file, then run the script. Private repos are never listed. `links` holds extra datasets and Spaces beyond the main `dataset` and `space`, as {kind, url}.",
+  "updated": "2026-11-07",
   "stages": {
     "results": {
       "label": "Results",
@@ -36,7 +36,13 @@
       "repo": "https://github.com/Hebrish-ASR/English-Hebrew-Codeswitching-ASR-Benchmark",
       "dataset": "https://huggingface.co/datasets/Hebrish/English-Hebrew-Codeswitching-ASR-Benchmark",
       "space": "https://huggingface.co/spaces/danielrosehill/English-Hebrew-Codeswitching-ASR-Leaderboard",
-      "date": "2026-10"
+      "date": "2026-10",
+      "links": [
+        {
+          "kind": "dataset",
+          "url": "https://huggingface.co/datasets/Hebrish/Hebrish-Validation"
+        }
+      ]
     },
     {
       "id": "the-pc-bench",
@@ -60,7 +66,13 @@
       "repo": "https://github.com/danielrosehill/Propaganda-Bait-Eval",
       "dataset": "https://huggingface.co/datasets/danielrosehill/Propaganda-Bait-Eval",
       "prompts": 72,
-      "date": "2026-10-19"
+      "date": "2026-10-19",
+      "links": [
+        {
+          "kind": "dataset",
+          "url": "https://huggingface.co/datasets/danielrosehill/Propaganda-Bait-Eval-Runs"
+        }
+      ]
     },
     {
       "id": "conspiracy-endorsement-eval",
@@ -71,7 +83,13 @@
       "repo": "https://github.com/danielrosehill/Conspiracy-Endorsement-Eval",
       "dataset": "https://huggingface.co/datasets/danielrosehill/Conspiracy-Endorsement-Eval",
       "prompts": 98,
-      "date": "2026-10-19"
+      "date": "2026-10-19",
+      "links": [
+        {
+          "kind": "dataset",
+          "url": "https://huggingface.co/datasets/danielrosehill/Conspiracy-Endorsement-Eval-Runs"
+        }
+      ]
     },
     {
       "id": "israel-palestine-framing-eval",
@@ -82,7 +100,13 @@
       "repo": "https://github.com/danielrosehill/Israel-Palestine-Framing-Eval",
       "dataset": "https://huggingface.co/datasets/danielrosehill/Israel-Palestine-Framing-Eval",
       "prompts": 70,
-      "date": "2026-10-20"
+      "date": "2026-10-20",
+      "links": [
+        {
+          "kind": "dataset",
+          "url": "https://huggingface.co/datasets/danielrosehill/Israel-Palestine-Framing-Eval-Runs"
+        }
+      ]
     },
     {
       "id": "american-centrism-eval",
@@ -112,7 +136,14 @@
       "summary": "How MP3 bitrate affects transcription accuracy across every audio-input LLM on OpenRouter.",
       "repo": "https://github.com/danielrosehill/Audio-Understanding-Bitrate-Eval-0426",
       "dataset": "https://huggingface.co/datasets/danielrosehill/Audio-Understanding-Bitrate-Eval-0426",
-      "date": "2026-04"
+      "date": "2026-04",
+      "links": [
+        {
+          "kind": "dataset",
+          "url": "https://huggingface.co/datasets/danielrosehill/Audio-Understanding-Test-Set"
+        }
+      ],
+      "space": "https://huggingface.co/spaces/danielrosehill/Audio-Understanding-Experiment"
     },
     {
       "id": "whisper-fine-tune-accuracy-eval",
@@ -120,7 +151,15 @@
       "category": "speech",
       "stage": "results",
       "summary": "WER of personal Whisper fine-tunes vs stock Whisper at each model size. Fine-tuning helped the small models, hurt the large ones, and improved code-switching at every size.",
-      "repo": "https://github.com/danielrosehill/Whisper-Fine-Tune-Accuracy-Eval"
+      "repo": "https://github.com/danielrosehill/Whisper-Fine-Tune-Accuracy-Eval",
+      "links": [
+        {
+          "kind": "dataset",
+          "url": "https://huggingface.co/datasets/danielrosehill/STT-Fine-Tune-Eval-101225"
+        }
+      ],
+      "dataset": "https://huggingface.co/datasets/danielrosehill/Whisper-Fine-Tune-One-Shot-Eval",
+      "space": "https://huggingface.co/spaces/danielrosehill/Whisper-Fine-Tune-Eval"
     },
     {
       "id": "whisper-wpm-background-noise-eval",
@@ -162,7 +201,8 @@
       "category": "speech",
       "stage": "results",
       "summary": "Whisper model sizes in Speech Note on Ubuntu with AMD/ROCm. A rough first-pass comparison.",
-      "repo": "https://github.com/danielrosehill/Local-ASR-STT-Benchmark"
+      "repo": "https://github.com/danielrosehill/Local-ASR-STT-Benchmark",
+      "space": "https://huggingface.co/spaces/danielrosehill/Single-Shot-ASR-Eval"
     },
     {
       "id": "hebrew-image-generation-eval",
@@ -231,12 +271,76 @@
       "id": "tech-graphics-benchmark",
       "name": "Tech Graphics Benchmark",
       "category": "image",
-      "stage": "prompts",
+      "stage": "results",
       "summary": "Lightweight periodic check of whether image models can make colourful, stylised tech diagrams with exact text and correct arrows. Text-to-image and image-to-image (whiteboard restyling), plus a gated Hebrew and mixed Hebrew/English track; cheap models on fal, two generations each, human-graded.",
       "repo": "https://github.com/danielrosehill/Tech-Graphics-Benchmark",
       "dataset": "https://huggingface.co/datasets/danielrosehill/Tech-Graphics-Benchmark",
       "prompts": 9,
-      "date": "2026-10-28"
+      "date": "2026-10-28",
+      "links": [
+        {
+          "kind": "dataset",
+          "url": "https://huggingface.co/datasets/danielrosehill/Tech-Graphics-Benchmark-Runs"
+        },
+        {
+          "kind": "dataset",
+          "url": "https://huggingface.co/datasets/danielrosehill/Tech-Graphics-Benchmark-Ratings"
+        }
+      ]
+    },
+    {
+      "id": "voice-note-stt-evaluation",
+      "name": "Voice Note STT Evaluation",
+      "category": "speech",
+      "stage": "results",
+      "summary": "Real voice notes, clean and noisy, used to compare speech-to-text services.",
+      "repo": "https://github.com/danielrosehill/STT-Voice-Note-Evaluation",
+      "dataset": "https://huggingface.co/datasets/danielrosehill/STT-Voice-Notes-Evals",
+      "space": "https://huggingface.co/spaces/danielrosehill/STT-Comparison",
+      "links": [
+        {
+          "kind": "dataset",
+          "url": "https://huggingface.co/datasets/danielrosehill/Noisy-Voice-Notes"
+        },
+        {
+          "kind": "dataset",
+          "url": "https://huggingface.co/datasets/danielrosehill/Small-STT-Eval-Audio-Dataset"
+        },
+        {
+          "kind": "space",
+          "url": "https://huggingface.co/spaces/danielrosehill/Local-STT-Eval-One-Sample"
+        }
+      ],
+      "date": "2025-08"
+    },
+    {
+      "id": "podcast-asr-evaluation",
+      "name": "Podcast ASR Evaluation",
+      "category": "speech",
+      "stage": "results",
+      "summary": "Local and cloud speech recognition models compared on one podcast episode.",
+      "dataset": "https://huggingface.co/datasets/danielrosehill/Podcast-ASR-Evaluation",
+      "space": "https://huggingface.co/spaces/danielrosehill/Single-Podcast-ASR-Eval",
+      "date": "2025-11"
+    },
+    {
+      "id": "text-to-image-test-prompts",
+      "name": "Text-To-Image Test Prompts",
+      "category": "image",
+      "stage": "prompts",
+      "summary": "A library of test prompts for text-to-image models.",
+      "repo": "https://github.com/danielrosehill/Text-To-Image-Test-Prompts",
+      "dataset": "https://huggingface.co/datasets/danielrosehill/Text-To-Image-Test-Prompts",
+      "date": "2025-04"
+    },
+    {
+      "id": "parakeet-dictation-cleanup-eval",
+      "name": "Parakeet Dictation Cleanup Eval",
+      "category": "speech",
+      "stage": "planned",
+      "summary": "Evaluation-only set for dictation clean-up. A placeholder so far: no clips recorded yet.",
+      "dataset": "https://huggingface.co/datasets/danielrosehill/Parakeet-Dictation-Cleanup-Eval",
+      "date": "2026-10"
     }
   ]
 }
